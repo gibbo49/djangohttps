@@ -16,8 +16,8 @@ services:
     depends_on:
       - app
     ports:
-      - 80:800
-      - 443:4430
+      - 800:800
+      - 4430:4430
     volumes:
       - certbot-web:/vol/www
       - proxy-dhparams:/vol/proxy
