@@ -13,7 +13,7 @@ echo "Getting certificate..."
 
 certbot certonly \
     --webroot \
-    --webroot-path "/vol/www/djangohttps_web" \
+    --webroot-path "/vol/www" \
     -d "$DOMAIN" \
     --email $EMAIL \
     --rsa-key-size 4096 \

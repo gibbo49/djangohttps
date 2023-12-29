@@ -3,7 +3,7 @@ server {
     server_name ${DOMAIN} www.${DOMAIN};
 
     location djangohttps_web/.well-known/acme-challenge/ {
-        root /vol/www/djangohttps_web/;
+        root /vol/www;
     }
 
     location / {
