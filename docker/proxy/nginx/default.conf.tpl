@@ -1,5 +1,5 @@
 server {
-    listen 800;
+    listen 80;
     server_name ${DOMAIN} www.${DOMAIN};
 
     location djangohttps_web/.well-known/acme-challenge/ {
