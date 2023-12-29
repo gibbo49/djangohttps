@@ -1,8 +1,8 @@
 server {
-    listen 800;
+    listen 80;
     server_name ${DOMAIN} www.${DOMAIN};
 
-    location /.well-known/acme-challenge/ {
+    location djangohttps_web/.well-known/acme-challenge/ {
         root /vol/www/;
     }
 
@@ -12,7 +12,7 @@ server {
 }
 
 server {
-    listen 4430 ssl;
+    listen 443 ssl;
     server_name ${DOMAIN} www.${DOMAIN};
 
     ssl_certificate     /etc/letsencrypt/live/${DOMAIN}/fullchain.pem;
