@@ -16,8 +16,8 @@ services:
     depends_on:
       - app
     ports:
-      - 800:800
-      - 4430:4430
+      - 80:80
+      - 443:443
     volumes:
       - certbot-web:/vol/www
       - proxy-dhparams:/vol/proxy
@@ -34,21 +34,11 @@ services:
       - DOMAIN=${DOMAIN}
     volumes:
       - certbot-web:/vol/www
-      - certbot-certs:/etc/letsencrypt
+      - certbot-certs:/etc/letsencrypt/
     depends_on:
       - proxy
 
 volumes:
   certbot-web:
-    driver: local
-    driver_opts:
-      type: none
-      device: /volume1/web/djangohttps
-      o: bind
   proxy-dhparams:
-    driver: local
-    driver_opts:
-      type: none
-      device: /volume1/web/djangohttps/proxy
-      o: bind
   certbot-certs:
