@@ -1,8 +1,9 @@
 server {
-    listen 80;
+    listen 800;
     server_name ${DOMAIN} www.${DOMAIN};
 
     location djangohttps_web/.well-known/acme-challenge/ {
+        allow all;
         root /vol/www;
     }
 
