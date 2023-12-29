@@ -40,5 +40,15 @@ services:
 
 volumes:
   certbot-web:
+    driver: local
+    driver_opts:
+      type: none
+      device: /volume1/web/djangohttps
+      o: bind
   proxy-dhparams:
+    driver: local
+    driver_opts:
+      type: none
+      device: /volume1/web/djangohttps/proxy
+      o: bind
   certbot-certs:
